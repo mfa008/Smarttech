@@ -33,9 +33,9 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Activer le rapport d'erreurs MySQLi
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
+    echo "36";
     // Connexion à la base de données
-    $db = new mysqli('127.0.0.1', 'root', '', 'smarttech');
+    $db = new mysqli('localhost', 'root', '', 'smarttech');
 
     // Préparation de la requête
     $stmt = $db->prepare("INSERT INTO employes 
