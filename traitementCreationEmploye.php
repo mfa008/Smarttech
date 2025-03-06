@@ -31,44 +31,41 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    try {
-        // Activer le rapport d'erreurs MySQLi
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    // Activer le rapport d'erreurs MySQLi
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-        // Connexion à la base de données
-        $db = new mysqli('127.0.0.1', 'root', '', 'smarttech');
+    // Connexion à la base de données
+    $db = new mysqli('127.0.0.1', 'root', '', 'smarttech');
 
-        // Préparation de la requête
-        $stmt = $db->prepare("INSERT INTO employes 
+    // Préparation de la requête
+    $stmt = $db->prepare("INSERT INTO employes 
             (nom, prenom, email, poste, salaire, date_embauche, departement)
             VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-        // Debug (identique à la version PDO)
-        var_dump($_POST);
+    // Debug (identique à la version PDO)
+    var_dump($_POST);
 
-        // Récupération des données POST
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $email = $_POST['email'];
-        $poste = $_POST['poste'];
-        $salaire = $_POST['salaire'];
-        $date_embauche = $_POST['date_embauche'];
-        $departement = $_POST['departement'];
+    // Récupération des données POST
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $poste = $_POST['poste'];
+    $salaire = $_POST['salaire'];
+    $date_embauche = $_POST['date_embauche'];
+    $departement = $_POST['departement'];
 
-        // Liaison des paramètres (types: s=string, d=double)
-        $stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement);
+    // Liaison des paramètres (types: s=string, d=double)
+    $stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement);
 
-        // Exécution
-        $stmt->execute();
+    // Exécution
+    $stmt->execute();
 
-        // Message de succès
-        $_SESSION['success'] = "Employé enregistré avec succès!";
-    } catch (mysqli_sql_exception $e) {
-        // Gestion des erreurs
-        $_SESSION['error'] = "Erreur : " . $e->getMessage();
-    }
+    // Message de succès
+    echo "Employé enregistré avec succès!";
+    // Gestion des erreurs
+    // $_SESSION['error'] = "Erreur : " . $e->getMessage();
 
     // Redirection vers le formulaire
-    header('Location: employe_form.php');
+    // header('Location: employe_form.php');
     exit();
 }
