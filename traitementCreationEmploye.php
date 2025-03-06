@@ -24,6 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['error'] = "Erreur : " . $e->getMessage();
     }
     // header('Location: employe_form.php');
-    echo "C bon";
+    echo $_SESSION;
     exit();
 }
