@@ -37,9 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Connexion à la base de données
 
     $db = new mysqli('localhost', 'root', '', 'smarttech');
-    if (!$db) {
-        echo "probleme";
-    }
+    echo "40";
     // Préparation de la requête
     $stmt = $db->prepare("INSERT INTO employes 
             (nom, prenom, email, poste, salaire, date_embauche, departement)
