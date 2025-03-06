@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (PDOException $e) {
         $_SESSION['error'] = "Erreur : " . $e->getMessage();
     }
-    header('Location: employe_form.php');
+    // header('Location: employe_form.php');
+    echo "C bon";
     exit();
 }
