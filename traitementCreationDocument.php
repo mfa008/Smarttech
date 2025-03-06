@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (PDOException $e) {
         $_SESSION['error'] = "Erreur base de données";
     }
-    header('Location: document_form.php');
+    echo $_SESSION;
+    // header('Location: document_form.php');
     exit();
 }
