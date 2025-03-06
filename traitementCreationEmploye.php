@@ -3,7 +3,7 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        $db = new PDO('mysql:host=localhost;dbname=entreprise;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=smarttech;charset=utf8', 'root', '');
 
         $stmt = $db->prepare("INSERT INTO employes 
             (nom, prenom, email, poste, salaire, date_embauche, departement)
