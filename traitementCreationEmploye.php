@@ -34,7 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Activer le rapport d'erreurs MySQLi
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     // echo "36";
-    var_dump($_POST);
+    // var_dump($_POST);
+    // INSERT INTO employes (nom, prenom, email, poste, salaire, date_embauche, departement) 
+    // VALUES ('TestNom', 'TestPrenom', 'test@email.com', 'Développeur', 2000, '2024-03-06', 'IT');
 
     // Connexion à la base de données
 
