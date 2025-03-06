@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $db->prepare("INSERT INTO employes 
             (nom, prenom, email, poste, salaire, date_embauche, departement)
             VALUES (?, ?, ?, ?, ?, ?, ?)");
-
+        var_dump($_POST);
         $stmt->execute([
             $_POST['nom'],
             $_POST['prenom'],
