@@ -331,7 +331,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="traitementCreationEmploye.php" method="post">
               <div class="row mb-3">
                 <div class="col-md-6">
                   <label for="firstName" class="form-label">Prénom</label>
@@ -414,6 +414,11 @@
                 <label for="address" class="form-label">Adresse</label>
                 <textarea class="form-control" id="address" rows="3"></textarea>
               </div>
+              <input
+                type="submit"
+                value="Enregistrer"
+                class="btn btn-primary"
+              />
             </form>
           </div>
           <div class="modal-footer">
@@ -424,7 +429,7 @@
             >
               Annuler
             </button>
-            <button type="button" class="btn btn-primary">Enregistrer</button>
+            <!-- <button type="submit" class="btn btn-primary">Enregistrer</button> -->
           </div>
         </div>
       </div>
