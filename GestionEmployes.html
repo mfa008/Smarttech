@@ -337,6 +337,7 @@
                   <label for="firstName" class="form-label">Prénom</label>
                   <input
                     type="text"
+                    name="prenom"
                     class="form-control"
                     id="firstName"
                     required
@@ -346,6 +347,7 @@
                   <label for="lastName" class="form-label">Nom</label>
                   <input
                     type="text"
+                    name="nom"
                     class="form-control"
                     id="lastName"
                     required
@@ -357,21 +359,23 @@
                   <label for="email" class="form-label">Email</label>
                   <input
                     type="email"
+                    name="email"
                     class="form-control"
                     id="email"
                     required
                   />
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <label for="phone" class="form-label">Téléphone</label>
                   <input type="tel" class="form-control" id="phone" />
                 </div>
-              </div>
+              </div> -->
               <div class="row mb-3">
                 <div class="col-md-6">
                   <label for="position" class="form-label">Poste</label>
                   <input
                     type="text"
+                    name="poste"
                     class="form-control"
                     id="position"
                     required
@@ -379,7 +383,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="department" class="form-label">Département</label>
-                  <select class="form-select" id="department" required>
+                  <select name="departement" class="form-select" id="department" required>
                     <option value="">Sélectionnez...</option>
                     <option value="IT">IT</option>
                     <option value="Marketing">Marketing</option>
@@ -398,6 +402,7 @@
                     class="form-control"
                     id="hireDate"
                     required
+                    name="date_embauche"
                   />
                 </div>
                 <div class="col-md-6">
@@ -406,6 +411,7 @@
                     type="number"
                     class="form-control"
                     id="salary"
+                    name="salaire"
                     required
                   />
                 </div>
