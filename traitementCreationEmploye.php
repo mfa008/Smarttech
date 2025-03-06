@@ -37,15 +37,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Connexion à la base de données
 
     $db = new mysqli('localhost', 'root', '', 'smarttech');
-    echo "40";
+    if ($db->connect_error) {
+        die("Échec de la connexion : " . $db->connect_error);
+    }
     // Préparation de la requête
     $stmt = $db->prepare("INSERT INTO employes 
             (nom, prenom, email, poste, salaire, date_embauche, departement)
             VALUES (?, ?, ?, ?, ?, ?, ?)");
 
     // Debug (identique à la version PDO)
-    var_dump($_POST);
-
+    // var_dump($_POST);
+    if (!$stmt) {
+        die("Erreur de préparation de la requête : " . $db->error);
+    }
     // Récupération des données POST
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
