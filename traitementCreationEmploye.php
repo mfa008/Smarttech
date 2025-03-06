@@ -28,7 +28,7 @@
 //     echo $_SESSION;
 //     exit();
 // }
-session_start();
+// session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Activer le rapport d'erreurs MySQLi
