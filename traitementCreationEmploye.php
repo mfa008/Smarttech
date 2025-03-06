@@ -18,10 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['date_embauche'],
             $_POST['departement']
         ]);
-
-        $_SESSION['success'] = "Employé enregistré avec succès!";
+        echo "employer enregistrer";
+        // $_SESSION['success'] = "Employé enregistré avec succès!";
     } catch (PDOException $e) {
-        $_SESSION['error'] = "Erreur : " . $e->getMessage();
+        // $_SESSION['error'] = "Erreur : " . $e->getMessage();
+        echo "employer non enregistrer";
     }
     // header('Location: employe_form.php');
     echo $_SESSION;
