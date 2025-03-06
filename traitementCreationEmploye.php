@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
 
         $_SESSION['success'] = "Employé enregistré avec succès!";
+        echo "ok";
     } catch (PDOException $e) {
         $_SESSION['error'] = "Erreur : " . $e->getMessage();
     }
