@@ -34,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Activer le rapport d'erreurs MySQLi
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     // echo "36";
+    var_dump($_POST);
+
     // Connexion à la base de données
 
     $db = new mysqli('localhost', 'root', '', 'smarttech');
