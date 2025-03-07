@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Connexion à la base de données
 
-    $db = new mysqli('localhost', 'root', '', 'smarttech');
+    $db = new mysqli('localhost', 'admin', 'passer', 'smarttech');
     if ($db->connect_error) {
         die("Échec de la connexion : " . $db->connect_error);
     }
