@@ -183,35 +183,6 @@ $result = $conn->query($sql); ?>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- <tr>
-                    <td>1</td>
-                    <td>Dupont</td>
-                    <td>Jean</td>
-                    <td>jean.dupont@example.com</td>
-                    <td>Développeur</td>
-                    <td>IT</td>
-                    <td>12/10/2022</td>
-                    <td class="action-buttons">
-                      <button
-                        class="btn btn-sm btn-info"
-                        data-bs-toggle="modal"
-                        data-bs-target="#viewEmployeeModal">
-                        <i class="fas fa-eye"></i>
-                      </button>
-                      <button
-                        class="btn btn-sm btn-warning"
-                        data-bs-toggle="modal"
-                        data-bs-target="#editEmployeeModal">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button
-                        class="btn btn-sm btn-danger"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteEmployeeModal">
-                        <i class="fas fa-trash"></i>
-                      </button>
-                    </td>
-                  </tr> -->
 
                   <?php
                   if ($result->num_rows > 0) {
@@ -225,16 +196,16 @@ $result = $conn->query($sql); ?>
                       echo "<td>" . htmlspecialchars($row['departement']) . "</td>";
                       echo "<td>" . htmlspecialchars($row['date_embauche']) . "</td>";
                       echo "<td class='action-buttons'>
-                            <button class='btn btn-sm btn-info' data-bs-toggle='modal' data-bs-target='#viewEmployeeModal'>
-                                <i class='fas fa-eye'></i>
-                            </button>
-                            <button class='btn btn-sm btn-warning' data-bs-toggle='modal' data-bs-target='#editEmployeeModal'>
-                                <i class='fas fa-edit'></i>
-                            </button>
-                            <button class='btn btn-sm btn-danger' data-bs-toggle='modal' data-bs-target='#deleteEmployeeModal'>
-                                <i class='fas fa-trash'></i>
-                            </button>
-                        </td>";
+          <button class='btn btn-sm btn-info' data-bs-toggle='modal' data-bs-target='#viewEmployeeModal'>
+              <i class='fas fa-eye'></i>
+          </button>
+          <button class='btn btn-sm btn-warning' data-bs-toggle='modal' data-bs-target='#editEmployeeModal'>
+              <i class='fas fa-edit'></i>
+          </button>
+          <button class='btn btn-sm btn-danger' onclick='confirmDelete(" . $row["id"] . ")'>
+              <i class='fas fa-trash'></i>
+          </button>
+      </td>";
                       echo "</tr>";
                     }
                   } else {
@@ -243,6 +214,7 @@ $result = $conn->query($sql); ?>
                   // Fermer la connexion
                   $conn->close();
                   ?>
+
                 </tbody>
               </table>
             </div>
@@ -397,6 +369,13 @@ $result = $conn->query($sql); ?>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function confirmDelete(id) {
+      if (confirm("Voulez-vous vraiment supprimer cet employé ?")) {
+        window.location.href = "supprimerEmploye.php?id=" + id;
+      }
+    }
+  </script>
 </body>
 
 </html>
