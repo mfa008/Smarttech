@@ -24,9 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $date_embauche = $_POST['date_embauche'];
     $departement = $_POST['departement'];
 
-    $stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement);
+    // $stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement);
 
-    $stmt->execute();
+    // $stmt->execute();
+    if (!$stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement)) {
+        die("Erreur lors du bind_param : " . $stmt->error);
+    }
+
+    if (!$stmt->execute()) {
+        die("Erreur lors de l'exécution : " . $stmt->error);
+    }
+
 
     echo "Employé enregistré avec succès!";
 
