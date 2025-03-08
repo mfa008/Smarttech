@@ -1,15 +1,15 @@
 <?php
-
+include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
-    $db = new mysqli('localhost', 'admin', 'passer', 'smarttech');
-    if ($db->connect_error) {
-        die("Échec de la connexion : " . $db->connect_error);
-    }
-    $stmt = $db->prepare("INSERT INTO employes 
+    // $db = new mysqli('localhost', 'admin', 'passer', 'smarttech');
+    // if ($db->connect_error) {
+    //     die("Échec de la connexion : " . $db->connect_error);
+    // }
+    $stmt = $conn->prepare("INSERT INTO employes 
             (nom, prenom, email, poste, salaire, date_embauche, departement)
             VALUES (?, ?, ?, ?, ?, ?, ?)");
 
