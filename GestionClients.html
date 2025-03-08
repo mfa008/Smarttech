@@ -291,6 +291,98 @@
           </div>
         </div>
       </div>
+      <div
+      class="modal fade"
+      id="addClientModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Ajouter un client</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action='traitementCreationClient.php' method='POST'>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">Societe</label>
+                  <input
+                    type="text"
+                    name="prenom"
+                    class="form-control"
+                    id="firstName"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Contact</label>
+                  <input
+                    type="text"
+                    name="nom"
+                    class="form-control"
+                    id="lastName"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Téléphone</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+              </div>
+             
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="hireDate" class="form-label"
+                    >Date Ajout</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="hireDate"
+                    required
+                    name="date_embauche"
+                  />
+                </div>
+                
+              <input
+                type="submit"
+                value="Enregistrer"
+                class="btn btn-primary"
+              />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Annuler
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>

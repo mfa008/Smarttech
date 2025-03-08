@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             (nom, prenom, email, poste, salaire, date_embauche, departement)
             VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-    // c79c9d1f6395c956a82d96338058663a1d99a8da
     if (!$stmt) {
         die("Erreur de préparation de la requête : " . $db->error);
     }
