@@ -24,9 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $date_embauche = $_POST['date_embauche'];
     $departement = $_POST['departement'];
 
-    // $stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement);
 
-    // $stmt->execute();
     if (!$stmt->bind_param('ssssdss', $nom, $prenom, $email, $poste, $salaire, $date_embauche, $departement)) {
         die("Erreur lors du bind_param : " . $stmt->error);
     }
